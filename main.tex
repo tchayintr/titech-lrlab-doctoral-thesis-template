@@ -1,0 +1,108 @@
+\documentclass[12pt,a4paper,onecolumn,oneside,final]{report}
+
+\usepackage[dthesis]{thesis-ict-en}
+\affiliation{}{Department of Information and Communications Engineering\\School of Engineering}
+\usepackage[bottom=1.5in]{geometry}
+
+% ----------------------------------------------------------------------
+% packages
+% ----------------------------------------------------------------------
+\usepackage[ipaex]{pxchfon}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{cleveref}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{import}
+\usepackage[labelformat=simple,labelfont=bf]{subcaption}
+\usepackage{natbib}
+% \usepackage{hyperref}
+% \usepackage{cite}
+
+% ----------------------------------------------------------------------
+% meta-data
+% ----------------------------------------------------------------------
+\year{2023}
+\date{September 2023}
+
+\advisorA{NANBAA Wan}
+\advisorAjobtitle{Professor}
+% When there are two supervisors, please use the following:
+\advisorB{NANBAA Tsuu}
+\advisorBjobtitle{Assoc. Professor}
+
+\title{Title}
+\studentid{00D00000}
+\author{MABUSHII Sugiru}
+
+% ----------------------------------------------------------------------
+% Options
+% ----------------------------------------------------------------------
+% 参照：https://qiita.com/Hdan/items/8c59a7e0a3215ae32d74
+\crefname{chapter}{Chapter}{Chapters}
+\creflabelformat{chapter}{#2#1#3}
+\crefname{section}{Section}{Sections}
+\creflabelformat{section}{#2#1#3}
+\crefname{equation}{Equation}{Equations}
+\crefname{figure}{Figure}{Figures}
+\crefname{table}{Table}{Tables}
+\crefname{appendix}{Appendix}{Appendices}
+\renewcommand{\figurename}{\textbf{Figure}} 
+\renewcommand{\tablename}{\textbf{Table}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thesubfigure}{(\alph{subfigure})} % subcaption でなくここで()をつける
+\newcommand{\crefpairconjunction}{ and }
+\newcommand{\crefrangeconjunction}{ from }
+\newcommand{\crefmiddleconjunction}{, }
+\newcommand{\creflastconjunction}{, and }
+\captionsetup[figure]{labelsep=colon,labelfont=bf}
+\captionsetup[table]{labelsep=colon,labelfont=bf}
+\definecolor{gray90}{gray}{0.9} % https://texblog.org/2011/09/02/coloring-every-alternate-table-row/
+\lstset{basicstyle=\ttfamily}
+
+% ----------------------------------------------------------------------
+% cover and table of contents
+% ----------------------------------------------------------------------
+\begin{document}
+
+\abstract{\input{sections/0_abstract}}
+\maketitle
+\setcounter{page}{1}
+\renewcommand{\thepage}{\roman{page}}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage
+
+% ----------------------------------------------------------------------
+% content (内容)
+% ----------------------------------------------------------------------
+\setcounter{page}{1}
+\renewcommand{\thepage}{\arabic{page}}
+ 
+\include{sections/1_introduction}
+\include{sections/2_related_work}
+\include{sections/4_experiments}
+\include{sections/5_results}
+\include{sections/6_conclusion}
+\include{sections/7_acknowledgements}
+
+%% original citation style
+% \bibliographystyle{junsrt}
+%% acl citation style
+\bibliographystyle{plainnat}
+\bibliography{bib/anthology,bib/main} 
+
+\include{sections/8_appendix}
+\end{document}
