@@ -135,8 +135,8 @@
       {\large
         \@ifundefined{@year}{}{\LARGE Academic Year} {\@year~}\\\vspace{2zw}
         {\LARGE
-          \begin{tabular}{|c|}\hline
-            \textbf{\@title} \\ \hline
+          \begin{tabular}{c}
+            \parbox{\linewidth}{\centering\textbf{\@title}} \\
           \end{tabular}
         }
         \\\vspace{3zw}
@@ -175,7 +175,7 @@
 
 %% ----------------------------------------------------------------------------
 %%      Footnote (フットノート)
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\thefootnote}{\arabic{footnote}}
 
 %% ----------------------------------------------------------------------------
 %%      Adjusting chapter number position (章番号位置の調整)
@@ -200,6 +200,8 @@
   \setcounter{section}{0}
   \def\@chapapp{Appendix }
   \def\thechapter{\Alph{chapter}}
+  \renewcommand{\thetable}{\thechapter.\arabic{table}}
+  \renewcommand{\thefigure}{\thechapter.\arabic{figure}}
 }
 
 %% ----------------------------------------------------------------------------
@@ -269,7 +271,7 @@
 \newcommand{\qed}{\hbox{\rule[-2pt]{3pt}{6pt}}} % Proof End!
 \newcommand{\pend}{\hfill\qed}
 \newcommand{\bsquare}{\hbox{\rule{6pt}{6pt}}} % Proof End in Black!
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\thefootnote}{\arabic{footnote}}
 \newtheorem{df}{Definition}[chapter]
 \newtheorem{pr}{Proposition}[chapter]
 \newtheorem{theo}{Theorem}[chapter]
