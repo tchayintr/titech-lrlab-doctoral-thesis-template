@@ -103,7 +103,8 @@
 %% ----------------------------------------------------------------------------
 %%      Cover & Abstract (表紙 & 内容梗概)
 %%      
-\def\year#1{\gdef\@year{#1}}
+\newcommand{\academicyear}[1]{\newcommand{\@year}{#1}}
+\def\academicyear#1{\gdef\@academicyear{#1}}
 \def\title#1{\gdef\@title{#1}}
 \def\advisorA#1{\gdef\@advisorA{#1}}
 \def\advisorAjobtitle#1{\gdef\@advisorAjobtitle{#1}}
@@ -133,7 +134,7 @@
     \vspace{4zw}
     \begin{center}
       {\large
-        \@ifundefined{@year}{}{\LARGE Academic Year} {\@year~}\\\vspace{2zw}
+        \@ifundefined{@academicyear}{}{\LARGE Academic Year} {\@academicyear~}\\\vspace{2zw}
         {\LARGE
           \begin{tabular}{c}
             \parbox{\linewidth}{\centering\textbf{\@title}} \\
