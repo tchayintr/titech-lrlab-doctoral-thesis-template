@@ -15,4 +15,5 @@
 
 ### Acknowledgement
 
-This repository was adapted from https://github.com/hiroshi-sasaki/thesis-template-ja
+- This repository was adapted from https://github.com/hiroshi-sasaki/thesis-template-ja
+- [@zhangying9128] (https://github.com/zhangying9128)
