@@ -2,6 +2,10 @@
 
 ### Overleaf
 - titech-lrlab-doctoral-thesis-template.zip
+#### Settings
+- Compiler: LaTex
+- TeX Live Version: 2022
+- Main document: main.tex
 
 ### Generated example
 - main.pdf
