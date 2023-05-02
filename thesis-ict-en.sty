@@ -112,6 +112,8 @@
 \def\advisorBjobtitle#1{\gdef\@advisorBjobtitle{#1}}
 \def\studentid#1{\gdef\@studentid{#1}}
 \def\author#1{\gdef\@author{#1}}
+\def\keywords#1{\gdef\@keywords{#1}}
+\def\printkeywords{\@ifundefined{@keywords}{}{\noindent\textbf{Key Words:} \textit{\@keywords}}}
 
 \def\date#1{\gdef\@date{#1}}
 \def\affiliation#1#2{\gdef\@affiliationM{#1}\gdef\@affiliationD{#2}
@@ -169,6 +171,7 @@
     \@abstract
     \thispagestyle{empty}
     \vfil
+    \printkeywords
     \end{titlepage}
     \setcounter{footnote}{0} \let\thanks\relax
     \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\maketitle\relax}
