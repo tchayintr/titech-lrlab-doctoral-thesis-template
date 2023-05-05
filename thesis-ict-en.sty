@@ -1,8 +1,8 @@
 %%      Filename : thesis-ict-en.sty
 %%
 %%      http://www.ict.e.titech.ac.jp/ict_local/ 
-%%      Revised thesis-ict.sty to support English manuscript for titech Doctoral ICT course 
-%%      \usepackage[{dthesis]{thesis-ict-en}
+%%      Revised thesis-ict.sty to support English manuscript for titech Doctoral/Master ICT course 
+%%      \usepackage[{dthesis]{thesis-ict-en} or \usepackage[{mthesis]{thesis-ict-en}
 %%
 \RequirePackage{newtx}
 
@@ -177,9 +177,65 @@
     \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\maketitle\relax}
 }
 
+\DeclareOption{mthesis}{
+  \def\tokyotechlogo{{\normalsize\sc
+    \hspace{11mm}\includegraphics[width=1.2cm,clip]{logo}\\
+    \vspace{-\baselineskip}\vspace{-6.8mm}
+    \hspace{28mm}Tokyo Institute of Technology\\
+    \vspace{-1\baselineskip}\vspace{4.5mm}
+    \hspace{28mm}Department of Information and Communications Engineering
+  }}
+
+  \def\tokyotechtitle{
+    \begin{flushleft}\tokyotechlogo\end{flushleft}
+    \vspace{4zw}
+    \begin{center}
+      {\large
+        \@ifundefined{@academicyear}{}{\LARGE Academic Year} {\@academicyear~}\\\vspace{2zw}
+        {\LARGE
+          \begin{tabular}{c}
+            \parbox{\linewidth}{\centering\textbf{\@title}} \\
+          \end{tabular}
+        }
+        \\\vspace{3zw}
+
+        \begin{tabular}{llr}
+          \@ifundefined{@advisorA}{}{\Large Supervisor & \Large\@advisorA, & \Large\@advisorAjobtitle \\}
+          \@ifundefined{@advisorB}{}{                  & \Large\@advisorB, & \Large\@advisorBjobtitle \\}
+        \end{tabular}
+        \vspace{1zw}
+
+        \@ifundefined{@date}{}{\Large\@date}\\\vspace{6zw}
+        {\large A thesis submitted for the degree of\\ Master of Engineering}\\\vspace{1zw}
+        {\large \@ifundefined{@affiliationD}{}{\@affiliationD}}\\\vspace{1zw}
+        {\Large \@ifundefined{@studentid}{}{\@studentid\hspace{1zw}}}
+        {\Large \@ifundefined{@author}{}{\@author}}
+      }
+    \end{center}
+  }
+
+  \def\maketitle{
+    \begin{titlepage}
+    \setcounter{page}{-1}
+    \setlength\topmargin{\paperheight}
+    \addtolength\topmargin{-1.38\textheight}
+    \tokyotechtitle%
+    \setcounter{page}{0}
+    \newpage
+    \chapter*{Abstract}
+    \@abstract
+    \thispagestyle{empty}
+    \vfil
+    \printkeywords
+    \end{titlepage}
+    \setcounter{footnote}{0} \let\thanks\relax
+    \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\maketitle\relax}
+}
+
 %% ----------------------------------------------------------------------------
 %%      Footnote (フットノート)
 \renewcommand{\thefootnote}{\arabic{footnote}}
+\interfootnotelinepenalty=10000
 
 %% ----------------------------------------------------------------------------
 %%      Adjusting chapter number position (章番号位置の調整)

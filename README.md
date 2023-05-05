@@ -1,13 +1,17 @@
-## An English Template for Doctoral Thesis of Okumura-Funakoshi Group, Tokyo Institute of Technology
+## An English Template for Doctoral/Master Thesis of Okumura-Funakoshi Group, Tokyo Institute of Technology
 
 ### Overleaf
 - titech-lrlab-doctoral-thesis-template.zip
-    - [download](https://github.com/tchayintr/titech-lrlab-doctoral-thesis-template/raw/main/titech-lrlab-doctoral-thesis-template.zip) 
+    - [Download](https://github.com/tchayintr/titech-lrlab-doctoral-thesis-template/raw/main/titech-lrlab-doctoral-thesis-template.zip) 
     - Overleaf &rarr; New Project &rarr; Upload Project
-#### Settings
+#### Overleaf Settings
 - Compiler: LaTex
 - TeX Live Version: 2022
 - Main document: main.tex
+#### Usage
+- Doctoral/Master Mode Selection
+    - Use `\usepackage[dthesis]{thesis-ict-en}` for doctoral course
+    - Use `\usepackage[mthesis]{thesis-ict-en}` for master course
 
 ### Generated example
 - main.pdf
