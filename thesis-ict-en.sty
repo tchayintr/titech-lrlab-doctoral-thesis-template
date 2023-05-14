@@ -79,8 +79,8 @@
 
 %% ----------------------------------------------------------------------------
 %%       Reference (参考文献)
-\def\thebibliography#1{\chapter*{Reference\@mkboth
-  {参 考 文 献}{参 考 文 献}}\list
+\def\thebibliography#1{\chapter*{References\@mkboth
+  {References}{References}}\list
   {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
   \advance\leftmargin\labelsep
   \usecounter{enumi}}
@@ -88,6 +88,12 @@
   \sloppy
   \sfcode`\.=1000\relax}
 \let\endthebibliography=\endlist
+
+% rename Bibliography to References
+\RequirePackage[english]{babel}
+\addto\captionsenglish{
+  \renewcommand{\bibname}{References}
+}
 
 %% ----------------------------------------------------------------------------
 %%      Adjustment of chapter number position (章番号位置の調整)
@@ -114,6 +120,7 @@
 \def\author#1{\gdef\@author{#1}}
 \def\keywords#1{\gdef\@keywords{#1}}
 \def\printkeywords{\@ifundefined{@keywords}{}{\noindent\textbf{Key Words:} \textit{\@keywords}}}
+\def\note#1{\def\@note{#1}}
 
 \def\date#1{\gdef\@date{#1}}
 \def\affiliation#1#2{\gdef\@affiliationM{#1}\gdef\@affiliationD{#2}
@@ -155,6 +162,7 @@
         {\large \@ifundefined{@affiliationD}{}{\@affiliationD}}\\\vspace{1zw}
         {\Large \@ifundefined{@studentid}{}{\@studentid\hspace{1zw}}}
         {\Large \@ifundefined{@author}{}{\@author}}
+        {\Large \@ifundefined{@note}{}{\\\vspace{1.5zw}\textbf{\@note}}}
       }
     \end{center}
   }
@@ -210,6 +218,7 @@
         {\large \@ifundefined{@affiliationD}{}{\@affiliationD}}\\\vspace{1zw}
         {\Large \@ifundefined{@studentid}{}{\@studentid\hspace{1zw}}}
         {\Large \@ifundefined{@author}{}{\@author}}
+        {\Large \@ifundefined{@note}{}{\\\vspace{1.5zw}\textbf{\@note}}}
       }
     \end{center}
   }

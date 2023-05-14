@@ -79,8 +79,13 @@
 % ----------------------------------------------------------------------
 % keywords
 % ----------------------------------------------------------------------
-
 \keywords{keyword1, keyword2, keyword3}
+
+% ----------------------------------------------------------------------
+% note
+% ----------------------------------------------------------------------
+\note{[For Internal Use]}
+
 
 % ----------------------------------------------------------------------
 % cover and table of contents
@@ -109,14 +114,25 @@
 \include{sections/4_experiments}
 \include{sections/5_results}
 \include{sections/6_conclusion}
-\include{sections/7_publication}
-\include{sections/8_acknowledgements}
+\include{sections/7_acknowledgements}
 
-%% original citation style
-% \bibliographystyle{junsrt}
-%% acl citation style
+
+% ----------------------------------------------------------------------
+% references and citation
+% ----------------------------------------------------------------------
+\addchapter{References}
 \bibliographystyle{plainnat}
+% \bibliographystyle{acl_natbib}
 \bibliography{bib/anthology,bib/main} 
 
-\include{sections/9_appendix}
+% ----------------------------------------------------------------------
+% appendix
+% ----------------------------------------------------------------------
+\include{sections/8_appendix}
+
+% ----------------------------------------------------------------------
+% publications
+% ----------------------------------------------------------------------
+\include{sections/9_publication}
+
 \end{document}
